@@ -1,2 +1,2 @@
-# Lab 2 - Starter
-URL to my Published Website: https://itailavi2003-sudo.github.io/Lab2_Starter/
+# Lab 3
+URL to my published Web-page: https://laviitai.github.io/sp26-cse110-lab3/
