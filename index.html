@@ -5,11 +5,270 @@
     <meta name="description" content="Meeting minutes for Pomodoro Timer brainstorm session">
     <title>Meeting Minutes: Pomodoro Timer Brainstorm</title>
     <link rel="icon" href="media/meetingDebate.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* REQUIREMENT: Comment */
+      :root {
+        --page-bg: #f7e7a7;
+        --text-main: rgb(45, 24, 75);
+        --accent: #fdb927;
+        --lakers-purple: #552583;
+      }
+
+      body {
+        /* REQUIREMENT: Fonts */
+        font-family: "Space Grotesk", sans-serif;
+        /* REQUIREMENT: Color + Background */
+        background-color: #f7e7a7;
+        /* REQUIREMENT: Wider-gamut color using color */
+        background-color: color(display-p3 0.96 0.91 0.64);
+        /* REQUIREMENT: CSS Variables & Fallbacks */
+        color: var(--text-main, #222);
+        margin: 0;
+      }
+
+      header {
+        /* REQUIREMENT: Color format using hsl */
+        background-color: hsl(268, 53%, 33%);
+        /* REQUIREMENT: Color format using rgba */
+        color: rgba(255, 220, 80, 1);
+        /* REQUIREMENT: Text (text-align) */
+        text-align: center;
+        /* REQUIREMENT: Text decoration */
+        text-decoration: none;
+        /* REQUIREMENT: Position*/
+        position: relative;
+        /* REQUIREMENT: Padding short syntax */
+        padding: 12px 16px 12px 16px;
+      }
+
+      nav {
+        /* REQUIREMENT: Color format using hsla*/
+        background-color: hsla(46, 98%, 57%, 0.9);
+        position: sticky;
+        top: 0;
+        padding: 0.5rem;
+        text-align: center;
+        z-index: 2;
+      }
+
+      nav a {
+        /* REQUIREMENT: Display  */
+        display: inline-block;
+        /* REQUIREMENT: Color format using color name */
+        color: purple;
+        text-decoration: underline;
+        margin: 0.25rem;
+        /* REQUIREMENT: Units */
+        padding: 0.4em 0.7em;
+        font-weight: 700;
+      }
+
+      /* REQUIREMENT: Pseudo-class */
+      nav a:hover {
+        /* REQUIREMENT: Wider-gamut color */
+        background-color: color-mix(in srgb, #ffffff 45%, #552583 55%);
+      }
+
+      /* REQUIREMENT: Pseudo-class  */
+      nav a:active {
+        color: #fff;
+        background-color: #552583;
+      }
+      main {
+        /* REQUIREMENT: Sizing  */
+        width: 90%;
+        max-width: 65rem;
+        min-width: 20rem;
+        /* REQUIREMENT: Margin short syntax  and auto margins */
+        margin: 0 auto;
+      }
+
+      section {
+        /* REQUIREMENT: Margin long syntax */
+        margin-top: 1rem;
+        margin-right: 0.5rem;
+        margin-bottom: 1rem;
+        margin-left: 0.5rem;
+
+        padding: 1rem 1rem 1rem 1rem;
+
+        /* REQUIREMENT: Borders (border-style, border-color, border-width, border-radius) */
+        border-style: solid;
+        border-color: var(--panel-border, #552583);
+        border-width: 2px;
+        border-radius: 8px;
+        /* REQUIREMENT: Color format using rgb */
+        background-color: rgb(255, 248, 220);
+      }
+
+      #attendance ul {
+        /* REQUIREMENT: Flexbox layout */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.75rem;
+        list-style: none;
+        padding-left: 0;
+      }
+
+      #attendance li {
+        width: 45%;
+      }
+
+      #agenda {
+        /* REQUIREMENT: Grid layout */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        align-items: start;
+      }
+
+      #discussion img {
+        /* REQUIREMENT: Units  */
+        width: 600px;
+        max-width: 100%;
+        min-width: 8cm;
+        /* REQUIREMENT: Sizing  */
+        height: auto;
+        position: static;
+      }
+
+      h3 {
+        font-size: 14pt;
+      }
+
+      fieldset {
+        /* REQUIREMENT: Padding long syntax */
+        padding-top: 0.75rem;
+        padding-right: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 0.75rem;
+
+        /* REQUIREMENT: Borders short syntax */
+        border: 2px solid #552583;
+        background-color: #fff8d6;
+      }
+
+      footer p {
+        /* REQUIREMENT: Text*/
+        color: #552583;
+        display: block;
+        text-align: center;
+      }
+
+      span {
+        display: inline;
+      }
+
+      datalist {
+        display: none;
+      }
+
+      button:hover {
+        background-color: #fdb927;
+      }
+
+      button:active {
+        background-color: #552583;
+        color: #fff;
+      }
+
+      /* REQUIREMENT: Universal Selector */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* REQUIREMENT: Element Selector */
+      hr {
+        border-color: #552583;
+      }
+
+      /* REQUIREMENT: Class Selector */
+      .lakers-note {
+        outline: 1px solid #552583;
+      }
+
+      /* REQUIREMENT: ID Selector */
+      #discussion {
+        scroll-margin-top: 4rem;
+      }
+
+      /* REQUIREMENT: Attribute Selector */
+      input[type="checkbox"] {
+        accent-color: #552583;
+      }
+
+      /* REQUIREMENT: Selector List */
+      h1, h2 {
+        letter-spacing: 0.02em;
+      }
+
+      /* REQUIREMENT: Descendant Combinator */
+      main section {
+        line-height: 1.35;
+      }
+
+      /* REQUIREMENT: Child Combinator */
+      nav > a {
+        border-radius: 4px;
+      }
+
+      /* REQUIREMENT: General sibling combinator */
+      h2 ~ p {
+        margin-top: 0.4rem;
+      }
+
+      /* REQUIREMENT: Adjacent sibling combinator */
+      h2 + p {
+        font-style: normal;
+      }
+
+      /* REQUIREMENT: Combining Two Selectors */
+      section.lakers-note {
+        background-color: #fff3bf;
+      }
+
+      /* REQUIREMENT: :has() */
+      section:has(video) {
+        border-color: #fdb927;
+      }
+
+      /* REQUIREMENT: Pseudo-class Selector */
+      summary:hover {
+        cursor: pointer;
+      }
+
+      /* REQUIREMENT: Nested Selectors */
+      form {
+        & label {
+          font-weight: 600;
+        }
+      }
+
+      /* REQUIREMENT: Responsiveness and Media Query */
+      @media (max-width: 800px) {
+        #agenda {
+          grid-template-columns: 1fr;
+        }
+
+        #attendance li {
+          width: 100%;
+        }
+
+        video {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
       <h1>Meeting Minutes: Pomodoro Timer Brainstorm</h1>
-      <h2>Meeting Topic: Brainstorming ideas and work delegation for the pomodoro timer project!</h2>
+      <h2>Meeting Topic: Brainstorming ideas and work delegation for the pomodoro timer project</h2>
       <h3>Date: 2026-04-05</h3>
       
     </header>
@@ -53,12 +312,12 @@
           <p>
           Kobes Idea: We should make a pomodoro style shot clock in the NBA, to enforce changes in Pace of play.<br>
           Michael Asked: Why don't we just stick to the CSE project guidlines man?<br>
-          Lebron brought up a concern: <em>I still can't beleive Steph said that.</em>
+          Lebron brought up a concern: <em style="color: purple;">I still can't beleive Steph said that.</em>
 
         </p>
         <img src="media/meetingDebate.png" alt="Photo of the G.O.A.T. debate" width="600">
       </section>
-      <section>
+      <section class="lakers-note">
   <h2>Extra Notes</h2>
   <div>
     <p><span>Reminder:</span> finalize the feature list before the next meeting.</p>
@@ -87,12 +346,6 @@
 
 </main>
 
-  
-  
-  
-  
-  
-  
   
     <section>
   <h2>Feedback Form</h2>
