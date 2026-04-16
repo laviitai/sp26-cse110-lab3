@@ -23,7 +23,7 @@
         /* REQUIREMENT: Color + Background */
         background-color: #f7e7a7;
         /* REQUIREMENT: Wider-gamut color using color */
-        background-color: color(display-p3 0.96 0.91 0.64);
+        background-color: rgb(245, 232, 163);
         /* REQUIREMENT: CSS Variables & Fallbacks */
         color: var(--text-main, #222);
         margin: 0;
@@ -242,10 +242,8 @@
       }
 
       /* REQUIREMENT: Nested Selectors */
-      form {
-        & label {
-          font-weight: 600;
-        }
+      form label {
+        font-weight: 600;
       }
 
       /* REQUIREMENT: Responsiveness and Media Query */
